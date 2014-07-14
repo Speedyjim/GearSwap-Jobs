@@ -1,5 +1,5 @@
--- *** Credit goes to Flippant for helping me with Gearswap *** --
--- Last Updated: 03/01/14 12:30 PM *Added Distance Rule/Toggle* --
+-- *** Original file from pastebin.com/u/Bokura *** --
+-- Last Updated: 07/41/14 12:30 AM --
 
 function get_sets()
 	IdleIndex = 1
