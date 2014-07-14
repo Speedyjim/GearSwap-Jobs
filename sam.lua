@@ -1,5 +1,5 @@
 -- *** Original file from pastebin.com/u/Bokura *** --
--- Last Updated: 03/08/14 8:35 PM *Fixed Error* --
+-- Last Updated: 07/14/14 12:30 AM *Fixed Error* --
 
 function get_sets()
 	AccIndex = 1
