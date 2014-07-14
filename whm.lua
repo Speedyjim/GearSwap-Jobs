@@ -1,5 +1,5 @@
 -- *** Original file from pastebin.com/u/Bokura *** --
--- Last Updated: 07/41/14 12:30 AM --
+-- Last Updated: 07/14/14 12:30 AM --
 
 function get_sets()
 	IdleIndex = 1
