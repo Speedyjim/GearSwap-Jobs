@@ -1,5 +1,5 @@
 -- *** Original file from pastebin.com/u/Bokura *** --
--- Last Updated: 7/14/14 11:30 PM *Updated gear sets* --
+-- Last Updated: 7/14/14 11:30 PM *Updated gear sets* ---
 
 function get_sets()
 	AccIndex = 1
