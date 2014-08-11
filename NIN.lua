@@ -1,5 +1,5 @@
 -- *** Original file from pastebin.com/u/Bokura *** --
--- Last Updated: 07/14/14 12:30 AM *Added Ranged Distance Rule & More WS Sets* --
+-- Last Updated: 08/10/14 *Updated Gear Sets* --
 
 function get_sets()
 	AccIndex = 1
@@ -27,10 +27,10 @@ function get_sets()
 	-- Normal TP Sets --
 	sets.TP = {ammo="Qirmiz Tathlum",
 			head="Iga Zukin +2",neck="Asperity Necklace",ear1="Heartseeker Earring",ear2="Dudgeon Earring",
-			body="Hachi. Chain. +1",hands="Otronif Gloves",ring1="Epona's Ring",ring2="Rajas Ring",
+			body="Hachi. Chain. +1",hands="Otronif Gloves +1",ring1="Epona's Ring",ring2="Rajas Ring",
 			back="Atheling Mantle",waist="Patentia Sash",legs="Mochizuki Hakama +1",feet="Manibozho Boots"}
 	sets.TP.MidACC = set_combine(sets.TP,{
-			ring2="Mars's Ring",back="Yokaze Mantle"})
+			ammo="Jukukik Feather",ring2="Mars's Ring",back="Yokaze Mantle"})
 	sets.TP.HighACC = set_combine(sets.TP.MidACC,{
 			head="Whirlpool Mask",neck="Iqabi Necklace",body="Manibozho Jerkin",hands="Buremte Gloves",
 			ring1="Patricius Ring",waist="Anguinus Belt",legs="Hachiya Hakama",feet="Qaaxo Leggings"})
@@ -48,7 +48,7 @@ function get_sets()
 	-- March + Haste + Haste Samba --
 	sets.TP.MidHaste = {ammo="Qirmiz Tathlum",
 			head="Felistris Mask",neck="Rancor Collar",ear1="Bladeborn Earring", ear2="Steelflash Earring", -- Replace with Trux/Brutal
-			body="Thaumas Coat",hands="Otronif Gloves",ring1="Epona's Ring",ring2="Rajas Ring",
+			body="Thaumas Coat",hands="Otronif Gloves +1",ring1="Epona's Ring",ring2="Rajas Ring",
 			back="Atheling Mantle",waist="Windbuffet Belt",legs="Otronif Brais",feet="Manibozho Boots"}
 	sets.TP.MidACC.MidHaste = set_combine(sets.TP.MidHaste,{
 	        ear1="Bladeborn Earring",ear2="Steelflash Earring",ring2="Mars's Ring",back="Yokaze Mantle"})
@@ -60,7 +60,7 @@ function get_sets()
 	-- Embrava + (March x2 or March + Haste) --
 	sets.TP.HighHaste = {ammo="Qirmiz Tathlum",
 			head="Felistris Mask",neck="Rancor Collar",ear1="Bladeborn Earring",ear2="Steelflash Earring", -- Replace with Trux/Brutal
-			body="Thaumas Coat",hands="Otronif Gloves",ring1="Epona's Ring",ring2="Rajas Ring",
+			body="Thaumas Coat",hands="Otronif Gloves +1",ring1="Epona's Ring",ring2="Rajas Ring",
 			back="Atheling Mantle",waist="Windbuffet Belt",legs="Otronif Brais",feet="Manibozho Boots"}
 	sets.TP.MidACC.HighHaste = set_combine(sets.TP.HighHaste,{
 			ear1="Steelflash Earring",ear2="Bladeborn Earring",ring2="Mars's Ring",back="Yokaze Mantle"})
@@ -71,7 +71,7 @@ function get_sets()
 	-- Embrava + (Haste or March) TP Sets --
 	sets.TP.EmbravaHaste = {ammo="Qirmiz Tathlum",
 			head="Felistris Mask",neck="Rancor Collar",ear1="Bladeborn Earring",ear2="Steelflash Earring", -- Replace with Trux/Brutal
-			body="Thaumas Coat",hands="Otronif Gloves",ring1="Epona's Ring",ring2="Rajas Ring",
+			body="Thaumas Coat",hands="Otronif Gloves +1",ring1="Epona's Ring",ring2="Rajas Ring",
 			back="Atheling Mantle",waist="Windbuffet Belt",legs="Mochizuki Hakama +1",feet="Manibozho Boots"}
 	sets.TP.MidACC.EmbravaHaste = set_combine(sets.TP.EmbravaHaste,{
 			ear1="Steelflash Earring",ear2="Bladeborn Earring",ring2="Mars's Ring",back="Yokaze Mantle"})
@@ -87,14 +87,15 @@ function get_sets()
 
 	-- PDT/MDT Sets --
 	sets.PDT = {ammo="Qirmiz Tathlum",
-			head="Otronif Mask",neck="Twilight Torque",body="Arhat's Gi +1",hands="Otronif Gloves",
-			ring1="Patricius Ring",ring2="Dark Ring",back="Repulse Mantle",waist="Flume Belt",
-			legs="Otronif Brais",feet="Otronif Boots"}
+			head="Otronif Mask",neck="Twilight Torque",body="Qaaxo Harness",hands="Otronif Gloves +1",
+			ring1="Patricius Ring",back="Repulse Mantle",waist="Flume Belt",
+			legs="Otronif Brais",feet="Otronif Boots +1",
+			ring2={name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -4%',}}}
 
 	sets.MDT = set_combine(sets.PDT,{ammo="Demonry Stone",
 			head="Uk'uxkaj Cap",ear1="Mujin Stud",ear2="Sanare Earring",
 			body="Hachi. Chain. +1",hands="Buremte Gloves",ring1="Shadow Ring",
-			ring2={name="Dark Ring",augments={"Magic Damage Taken -4%","Physical Damage Taken -6%"}},
+			ring2={name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -4%',}},
 			back="Mubvum. Mantle",legs="Nahtirah Trousers",feet="Daihanshi Habaki"})
 
 	-- Hybrid/Evasion Sets --
@@ -116,11 +117,11 @@ function get_sets()
 	-- WS Sets --
 	sets.WS["Blade: Hi"] = {ammo="Qirmiz Tathlum",
 			head="Uk'uxkaj Cap",neck="Hope Torque",ear1="Moonshade Earring",ear2="Brutal Earring",
-			body="Hachi. Chain. +1",hands="Hachiya Tekko +1", -- Replace with Qaaxi R15 A
+			body="Hachi. Chain. +1",hands="Qaaxo Mitaines",
 			ring1="Epona's Ring",ring2="Stormsoul Ring",back="Rancorous Mantle",waist="Caudata Belt",
-			legs="Mochi. Kyahan +1",feet="Daihanshi Habaki"} -- Mochi. Kyahan +1
+			legs="Mochi. Hakama +1",feet="Daihanshi Habaki"} -- Mochi. Kyahan +1
 	sets.WS["Blade: Hi"].MidACC = set_combine(sets.WS["Blade: Hi"],{
-			head="Whirlpool Mask",legs="Hachiya Hakama"})
+			head="Whirlpool Mask",neck="Shadow Gorget",legs="Hachiya Hakama"})
 	sets.WS["Blade: Hi"].HighACC = set_combine(sets.WS["Blade: Hi"].MidACC,{
 			back="Yokaze Mantle"})
 
@@ -153,7 +154,8 @@ function get_sets()
 	-- -- Magic Haste/Utsusemi Set --
 	sets.Midcast.Haste = set_combine(sets.Evasion,{ammo="Impatiens",
 	        neck="Torero Torque",hands="Mochizuki Tekko",
-			waist="Twilight Belt",back="Boxer's Mantle",feet="Iga Kyahan +2"})
+			waist="Twilight Belt",back="Boxer's Mantle",feet="Iga Kyahan +2",
+			ear1="Loquac. Earring",ring1="Veneficium Ring",ring2="Prolix Ring"})
 
 	-- Migawari Magic Set --
 	sets.Midcast.Migawari = {}
