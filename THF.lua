@@ -1,6 +1,5 @@
 -- *** Original file from pastebin.com/u/Bokura *** --
--- Last Updated: 07/14/14 12:30 AM --
-
+-- Last Updated: 08/10/14 *Updated Gear Sets* --
 
 function get_sets()
 	AccIndex = 1
@@ -37,50 +36,47 @@ function get_sets()
 			ear1="Dudgeon Earring",ear2="Heartseeker Earring",
 			body="Plunderer's Vest +1",
 			--body="Thaumas Coat",
-			hands="Pill. Armlets +1",ring1="Epona's Ring",ring2="Rajas Ring",
+			hands="Qaaxo Mitaines",ring1="Epona's Ring",ring2="Rajas Ring",
 			back="Atheling Mantle",waist="Patentia Sash",legs="Quiahuiz Trousers",feet="Plun. Poulaines +1"}
 	sets.TP.MidACC = set_combine(sets.TP,{ammo="Honed Tathlum",
-	        ear1="Dudgeon Earring",ear2="Heartseeker Earring",hands="Buremte Gloves"})
+	        ear1="Dudgeon Earring",ear2="Heartseeker Earring",body="Qaaxo Harness",hands="Buremte Gloves"})
 	sets.TP.HighACC = set_combine(sets.TP.MidACC,{
 	        head="Whirlpool Mask",neck="Iqabi Necklace",body="Pillager's Vest +1",ring1="Patricius Ring",
 			ring2="Mars's Ring",back="Canny Cape",waist="Anguinus Belt",legs="Plun. Culottes +1",feet="Pill. Poulaines +1"})			
 
     -- March x2 + Haste --
     sets.TP.MidHaste = set_combine(sets.TP,{
-            ear1="Bladeborn Earring",ear2="Steelflash Earring",waist="Windbuffet Belt"})
+            ear1="Trux Earring", ear2="Brutal Earring",waist="Windbuffet Belt"})
     sets.TP.MidACC.MidHaste = set_combine(sets.TP.MidHaste,{
-            ammo="Honed Tathlum",hands="Buremte Gloves"})
+            ammo="Honed Tathlum",body="Qaaxo Harness",hands="Buremte Gloves"})
     sets.TP.HighACC.MidHaste = set_combine(sets.TP.MidACC.MidHaste,{
             head="Whirlpool Mask",neck="Iqabi Necklace",body="Pillager's Vest +1",ring1="Patricius Ring",
 			back="Canny Cape",waist="Anguinus Belt",legs="Plun. Culottes +1",feet="Pill. Poulaines +1"})
  
     -- March x2 + Haste + Samba --
     sets.TP.HighHaste = set_combine(sets.TP.MidHaste,{
-            ear1="Bladeborn Earring", -- ear1="Trux Earring",
-            ear2="Steelflash Earring", -- ear2="Brutal Earring",
-            waist="Windbuffet Belt"})
+            ear1="Trux Earring", ear2="Brutal Earring",waist="Windbuffet Belt"})
     sets.TP.MidACC.HighHaste = set_combine(sets.TP.HighHaste,{
-            ammo="Honed Tathlum",hands="Buremte Gloves"})
+            ammo="Honed Tathlum",body="Qaaxo Harness",hands="Buremte Gloves"})
     sets.TP.HighACC.HighHaste = set_combine(sets.TP.MidACC.HighHaste,{
             head="Whirlpool Mask",neck="Iqabi Necklace",body="Pillager's Vest +1",ring1="Patricius Ring",
 			back="Canny Cape",waist="Anguinus Belt",legs="Plun. Culottes +1",feet="Pill. Poulaines +1"})			
 
 	-- Full TH TP Set --
-	sets.TP.TH = {
-			hands="Plun. Armlets +1",waist="Chaac Belt",feet="Raid. Poulaines +2"}
+	sets.TP.TH = {hands="Plun. Armlets +1",waist="Chaac Belt",feet="Raid. Poulaines +2"}
 
 	-- TP Rancor ON Neck --
 	sets.TP.Rancor = {neck="Rancor Collar"}
 
 	-- PDT/MDT Sets --
 	sets.PDT = {neck="Wiglen Gorget",
-			ring1={name="Dark Ring",augments={"Magic Damage Taken -4%","Physical Damage Taken -6%"}},
+			ring1={name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -4%',}},
 			ring2="Patricius Ring",back="Repulse Mantle",waist="Flume Belt",feet="Iuitl Gaiters"}
 
 	sets.MDT = {
 	        head="Felistris Mask",neck="Twilight Torque",ear1="Mujin Stud",ear2="Sanare Earring",
 			body="Plunderer's Vest +1",hands="Pill. Armlets +1",ring1="Shadow Ring",
-			ring2={name="Dark Ring",augments={"Magic Damage Taken -4%","Physical Damage Taken -6%"}},
+			ring2={name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -4%',}},
 			back="Mubvum. Mantle",waist="Patentia Sash",legs="Pill. Culottes +1",feet="Pill. Poulaines +1"}
 
 	-- Hybrid/Evasion Sets --
@@ -114,9 +110,9 @@ function get_sets()
 
     sets.WS["Rudra's Storm"] = {}
 	sets.WS["Rudra's Storm"].SA = set_combine(sets.WS["Rudra's Storm"],{ammo="Qirmiz Tathlum",
-	        head="Pill. Bonnet +1",neck="Snow Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
+	        head="Pill. Bonnet +1",neck="Shadow Gorget",ear1="Brutal Earring",ear2="Moonshade Earring",
 			body="Pillager's Vest +1",hands="Pill. Armlets +1",ring1="Thundersoul Ring",ring2="Thundersoul Ring",
-			back="Kayapa Cape",waist="Artful Belt +1",legs="Pill. Culottes +1",feet="Plun. Poulaines +1"})
+			back="Kayapa Cape",waist="Cuchulain's Belt",legs="Pill. Culottes +1",feet="Plun. Poulaines +1"})
 	sets.WS["Rudra's Storm"].SA.HighACC = set_combine(sets.WS["Rudra's Storm"].SA,{})		
 	sets.WS["Rudra's Storm"].TA = set_combine(sets.WS["Rudra's Storm"].SA,{
 			body="Plunderer's Vest +1",ring2="Epona's Ring",back="Cavaros Mantle"})
@@ -161,7 +157,7 @@ function get_sets()
 	sets.JA["Perfect Dodge"] = {hands="Plun. Armlets +1"}
 	sets.JA.Steal = {hands="Pill. Armlets +1",legs="Pill. Culottes +1",feet="Pill. Poulaines +1"}
 	sets.JA.Flee = {feet="Pill. Poulaines +1"}
-	sets.JA.Despoil = {legs="Raid. Culottes +2",feet="Raid. Poulaines +2"}
+	sets.JA.Despoil = {feet="Raid. Poulaines +2"}
 	sets.JA.Feint = {legs="Plun. Culottes +1"}
 	sets.JA["Assassin's Charge"] = {feet="Plun. Poulaines +1"}
 	sets.JA.Ambush = {body="Plunderer's Vest +1"}
