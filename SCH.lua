@@ -1,5 +1,5 @@
 -- *** Original file from pastebin.com/u/Bokura *** --
--- Last Updated: 07/14/14 12:30 AM *Fixed Magic Sets* --
+-- Last Updated: 08/10/14 *Updated Gear Sets* --
 
 function get_sets()
 	AccIndex = 1
@@ -22,61 +22,38 @@ function get_sets()
 
 	-- Idle Sets --
 	sets.Idle = {}
-	sets.Idle.Refresh = {
-			main="Bolelabunga",sub="Genbu's Shield",ammo="Impatiens",
-			head="Peda. M.Board",neck="Colossus's Torque",
-			ear1="Lifestorm Earring",ear2="Loquac. Earring",
-			body="Gendewitha Bliaut",hands="Serpentes Cuffs",
-			ring1="Sangoma Ring",ring2="Bifrost Ring",
-			back="Umbra Cape",waist="Witful Belt",
-			legs="Nares Trews",feet="Serpentes Sabots"}
+	sets.Idle.Refresh = {main="Bolelabunga",sub="Genbu's Shield",ammo="Impatiens",
+			head="Peda. M.Board +1",neck="Colossus's Torque",ear1="Lifestorm Earring",ear2="Loquac. Earring",
+			body="Artsieq Jubbah",hands="Serpentes Cuffs",ring1="Sangoma Ring",ring2="Bifrost Ring",
+			back="Umbra Cape",waist="Fucho-no-Obi",legs="Nares Trews",feet="Serpentes Sabots"}
 	sets.Idle.Movement = set_combine(sets.Idle.Refresh,{
-			neck="Colossus's Torque",
-			ear2="Psystorm Earring",
-			body="Pedagogy Gown +1",hands="Hagondes Cuffs",
-			back="Bookworm's Cape",
-			legs="Hagondes Pants",
-			feet="Herald's Gaiters"})
-	sets.Resting = set_combine(sets.Idle.Refresh,{main="Boonwell Staff",ammo="Clarus Stone",
-			neck="Jeweled Collar",ear2="Loquac. Earring",
-			ring1="Angha Ring",ring2="Sangoma Ring",
-            back="Vita Cape",waist="Austerity Belt"})
+			head="Peda. M.Board +1",neck="Colossus's Torque",ear2="Psystorm Earring",
+			body="Pedagogy Gown +1",hands="Lurid Mitts",
+			back="Bookworm's Cape",legs="Acad. Pants +1",feet="Herald's Gaiters"})
+	sets.Resting = set_combine(sets.Idle.Refresh,{main="Chatoyant Staff"})
 
 	-- PDT Set --
 	sets.PDT = {}
 
-	sets.Sublimation = set_combine(sets.Idle.Refresh,{
-			ear1="Savant's Earring",body="Pedagogy Gown +1"})
+	sets.Sublimation = set_combine(sets.Idle.Refresh,{head="Acad. Mortarboard",ear1="Savant's Earring",body="Pedagogy Gown +1"})
 
 	sets.Precast = {}
 	-- Fastcast Sets --
-	sets.Precast.FastCast = {
-			ammo="Incantor Stone",head="Nahtirah Hat",
-			ear2="Loquac. Earring",body="Hedera Cotehardie",
-			hands="Gendewitha Gages",
-			ring2="Prolix Ring",
-			back="Swith Cape +1",waist="Ninurta's Sash",
-			legs="Artsieq Hose",feet="Chelona Boots +1"}
+	sets.Precast.FastCast = {ammo="Incantor Stone",
+	        head="Nahtirah Hat",ear2="Loquac. Earring",body="Hedera Cotehardie",
+			hands="Gendewitha Gages",ring2="Prolix Ring",back="Swith Cape +1",
+			waist="Witful Belt",legs="Artsieq Hose",feet="Peda. Loafers +1"}
 
 	-- Elemental Staves --
-	sets.Precast.Thunder = {main='Apamajas I'}
-	sets.Precast.Water = {main='Haoma I'}
-	sets.Precast.Fire = {main='Atar I'}
-	sets.Precast.Ice = {main='Vourukasha I'}
-	sets.Precast.Wind = {main='Vayuvata I'}
-	sets.Precast.Earth = {main='Vishrava I'}
-	sets.Precast.Light = {main='Arka I'}
-	sets.Precast.Dark = {main='Xsaeta I'}
 
 	-- Precast Enhancing Magic --
-	sets.Precast['Enhancing Magic'] = set_combine(sets.Precast.FastCast,{waist="Siegel Sash"})
+	sets.Precast['Enhancing Magic'] = set_combine(sets.Precast.FastCast,{})
 
 	-- Precast Cure Set --
-	sets.Precast.Cure = {
-			main="Tamaxchi",sub="Genbu's Shield",ammo="Impatiens",
+	sets.Precast.Cure = {main="Tamaxchi",sub="Genbu's Shield",ammo="Impatiens",
 			head="Paean Mitra",neck="Colossus's Torque",ear2="Loquac. Earring",
 			body="Nefer Kalasiris",hands="Gendewitha Gages",ring1="Prolix Ring",
-			back="Pahtli Cape",waist="Witful Belt";legs="Artsieq Hose",feet="Chelona Boots +1"}
+			back="Pahtli Cape",waist="Witful Belt";legs="Artsieq Hose",feet="Peda. Loafers +1"}
 
 	-- Midcast Base Set --
 	sets.Midcast = {}
@@ -86,100 +63,74 @@ function get_sets()
 
 	-- Cure Set --
 	sets.Midcast.Cure = {main="Tamaxchi",sub="Genbu's Shield",ammo="Incantor Stone",
-			head="Gende. Caubeen",neck="Colossus's Torque",
-			ear1="Lifestorm Earring",ear2="Loquac. Earring",
-			body="Nefer Kalasiris",hands="Bokwus Gloves",
-			ring1="Sirona's Ring",ring2="Ephedra Ring",
-			back="Tempered Cape",waist="Cascade Belt",
-			legs="Nares Trews",feet="Gende. Galoshes"}
+			head="Gende. Caubeen",neck="Colossus's Torque",ear1="Lifestorm Earring",ear2="Loquac. Earring",
+			body="Peda. Gown +1",hands="Pedagogy Bracers",ring1="Sirona's Ring",ring2="Ephedra Ring",
+			back="Tempered Cape",waist="Cascade Belt",legs="Acad. Pants +1",feet="Peda. Loafers +1"}
+			
+	-- Light Weather Cure --
+    sets.Midcast.Cure.Weather = set_combine(sets.Midcast.Cure,{main="Chatoyant Staff",sub="Curatio Grip",back="Twilight Cape"})	
 
 	-- Curaga Set --
-	sets.Midcast.Curaga = set_combine(sets.Midcast.Cure,{
-            neck="Nuna Gorget +1",
-            ring1="Aquasoul Ring",
-            ring2="Aquasoul Ring",})
+	sets.Midcast.Curaga = set_combine(sets.Midcast.Cure,{neck="Nuna Gorget +1",ring1="Aquasoul Ring",ring2="Aquasoul Ring",})
 
 	-- Enhancing Magic --
 	sets.Midcast['Enhancing Magic'] = {ammo="Savant's Treatise",
-	        head="Umuthi Hat",neck="Colossus's Torque",ear1="Loquac. Earring",ear2="Andoaa Earring",
-			body="Pedagogy Gown +1",hands="Ayao's Gages",ring1="Prolix Ring",back="Swith Cape +1",
-			waist="Cascade Belt",feet="Gende. Galoshes"}
+	        head="Umuthi Hat",neck="Colossus's Torque",ear1="Andoaa Earring",
+			body="Pedagogy Gown +1",hands="Ayao's Gages",waist="Cascade Belt"}
 
 	-- Stoneskin --
 	sets.Midcast.Stoneskin = set_combine(sets.Midcast['Enhancing Magic'],{head="Umuthi Hat",neck="Stone Gorget"})
 
 	-- Cursna --
-	sets.Midcast.Cursna = set_combine(sets.Midcast.Haste,{ammo="Impatiens",
-			head="Nahtirah Hat",neck="Colossus's Torque",
-			body="Hedera Cotehardie",hands="Bokwus Gloves",
-			ring1="Ephedra Ring",ring2="Ephedra Ring",
-			back="Ogapepo Cape",waist="Witful Belt",
-			legs="Bokwus Slops",feet="Gende. Galoshes"})
+	sets.Midcast.Cursna = set_combine(sets.Midcast.Haste,{ammo="Impatiens",neck="Malison Medallion",ring1="Ephedra Ring",ring2="Ephedra Ring",
+			back="Ogapepo Cape",waist="Witful Belt",feet="Gende. Galoshes"})
 
 	-- Stun Sets --
-	sets.Midcast.Stun = {
-			main="Baqil Staff",sub="Mephitis Grip",ammo="Incantor Stone",
-			head="Peda. M.Board",neck="Eddy Necklace",
-			ear1="Gwati Earring",ear2="Loquac. Earring",
-			body="Hedera Cotehardie",hands="Gendewitha Gages",
-			ring1="Sangoma Ring",ring2="Prolix Ring",
-			back="Swith Cape +1",waist="Ninurta's Sash",
-			legs="Artsieq Hose",feet="Acad. Loafers"}
+	sets.Midcast.Stun = {main="Baqil Staff",sub="Mephitis Grip",ammo="Incantor Stone",
+			head="Peda. M.Board +1",neck="Eddy Necklace",ear1="Gwati Earring",ear2="Loquac. Earring",
+			body="Hedera Cotehardie",hands="Gendewitha Gages",ring1="Sangoma Ring",ring2="Prolix Ring",
+			back="Swith Cape +1",waist="Ninurta's Sash",legs="Artsieq Hose",feet="Acad. Loafers"}
 	sets.Midcast.Stun.MidACC = set_combine(sets.Midcast.Stun,{})
 	sets.Midcast.Stun.HighACC = set_combine(sets.Midcast.Stun.MidACC,{})
 
 	-- Dark Magic Sets --
 	sets.Midcast['Dark Magic'] = {main="Baqil Staff",sub="Mephitis Grip",ammo="Impatiens",
-		head="Artsieq Hat",neck="Eddy Necklace",
-		ear1="Psystorm Earring",ear2="Lifestorm Earring",
-		body="Hedera Cotehardie",hands="Yaoyotl Gloves",
-		ring1="Angha Ring",ring2="Sangoma Ring",
-		back="Bookworm's Cape",waist="Fucho-no-obi",
-		legs="Artsieq Hose",feet="Artsieq Boots"}
+		head="Artsieq Hat",neck="Eddy Necklace",ear1="Psystorm Earring",ear2="Lifestorm Earring",
+		body="Hedera Cotehardie",hands="Yaoyotl Gloves",ring1="Perception Ring",ring2="Sangoma Ring",
+		back="Bookworm's Cape",waist="Fucho-no-obi",legs="Pedagogy Pants",feet="Artsieq Boots"}
 	sets.Midcast['Dark Magic'].MidACC = set_combine(sets.Midcast['Dark Magic'],{})
 	sets.Midcast['Dark Magic'].HighACC = set_combine(sets.Midcast['Dark Magic'].MidACC,{})
 	
-	sets.Midcast.Drain = {
-	    main="Baqil Staff",sub="Mephitis Grip",ammo="Impatiens",
-		head="Artsieq Hat",neck="Eddy Necklace",
-		ear1="Hirudinea Earring",ear2="Loquac. Earring",
-		body="Hedera Cotehardie",hands="Yaoyotl Gloves",
-		ring1="Angha Ring",ring2="Sangoma Ring",
-		back="Bookworm's Cape",waist="Fucho-no-obi",
-		legs="Artsieq Hose",feet="Artsieq Boots"}
+	sets.Midcast.Drain = {main="Baqil Staff",sub="Mephitis Grip",ammo="Impatiens",
+		head="Artsieq Hat",neck="Eddy Necklace",ear1="Hirudinea Earring",ear2="Loquac. Earring",
+		body="Hedera Cotehardie",hands="Yaoyotl Gloves",ring1="Perception Ring",ring2="Sangoma Ring",
+		back="Ogapepo Cape",waist="Fucho-no-obi",legs="Artsieq Hose",feet="Artsieq Boots"}
 
 	sets.Midcast.Aspir = set_combine(sets.Midcast.Drain,{})
 
 	-- Elemental Sets --
-	sets.Midcast['Elemental Magic'] = {main="Baqil Staff",sub="Wise Strap",ammo="Witchstone",
-		head="Hagondes Hat",neck="Eddy Necklace",
-		ear1="Novio Earring",ear2="Friomisi Earring",
-		body="Hagondes Coat",hands="Yaoyotl Gloves",
-		ring1="Strendu Ring",ring2="Acumen Ring",
-		back="Bookworm's Cape",waist="Aswang Sash",
-		legs="Hagondes Pants",feet="Hagondes Sabots"}
+	sets.Midcast['Elemental Magic'] = {main="Ngqoqwanb",sub="Wise Strap",ammo="Witchstone",
+		head="Hagondes Hat",neck="Eddy Necklace",ear1="Novio Earring",ear2="Friomisi Earring",
+		body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Strendu Ring",ring2="Acumen Ring",
+		back="Bookworm's Cape",waist="Aswang Sash",legs="Hagondes Pants",feet="Hagondes Sabots"}
 	sets.Midcast['Elemental Magic'].MidACC = set_combine(sets.Midcast['Elemental Magic'],{})
-	sets.Midcast['Elemental Magic'].HighACC = set_combine(sets.Midcast['Elemental Magic'].MidACC,{})
+	sets.Midcast['Elemental Magic'].HighACC = set_combine(sets.Midcast['Elemental Magic'].MidACC,{
+	    sub="Mephitis Grip",ammo="Savant's Treatise",head="Artsieq Hat",ear1="Gwati Earring",
+		body="Artsieq Jubbah",legs="Artsieq Hose",feet="Artsieq Boots"})
 
 	-- Enfeebling Sets --
-	sets.Midcast['Enfeebling Magic'] = {}
+	sets.Midcast['Enfeebling Magic'] = {main="Baqil Staff",sub="Mephitis Grip",ammo="Savant's Treatise",
+		head="Artsieq Hat",neck="Imbodla Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
+		body="Artsieq Jubbah",hands="Lurid Mitts",ring1="Perception Ring",ring2="Sangoma Ring",
+		back="Refraction Cape",waist="Aswang Sash",legs="Artsieq Hose",feet="Artsieq Boots"}
 	sets.Midcast['Enfeebling Magic'].MidACC =  set_combine(sets.Midcast['Enfeebling Magic'],{})
-	sets.Midcast['Enfeebling Magic'].HighACC = set_combine(sets.Midcast['Enfeebling Magic'].MidACC,{
-	    sub="Mephitis Grip",ammo="Kalboron Stone",
-		head="Artsieq Hat",hands="Hagondes Cuffs",
-		ring2="Sangoma Ring",
-		ear1="Lifestorm Earring",ear2="Psystorm Earring",
-		back="Ogapepo Cape",feet="Artsieq Boots"})
+	sets.Midcast['Enfeebling Magic'].HighACC = set_combine(sets.Midcast['Enfeebling Magic'].MidACC,{})
 
 	-- Impact --
-	sets.Midcast.Impact = {
-			main="Baqil Staff",sub="Mephitis Grip",ammo="Kalboron Stone",
-			neck="Eddy Necklace",
-			ear1="Lifestorm Earring",ear2="Psystorm Earring",
-			body="Twilight Cloak",hands="Hagondes Cuffs",
-			ring1="Angha Ring",ring2="Sangoma Ring",
-			back="Refraction Cape",waist="Aswang Sash",
-			legs="Artsieq Hose",feet="Artsieq Boots"}
+	sets.Midcast.Impact = {main="Baqil Staff",sub="Mephitis Grip",ammo="Kalboron Stone",
+			neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
+			body="Twilight Cloak",hands="Lurid Mitts",ring1="Perception Ring",ring2="Sangoma Ring",
+			back="Refraction Cape",waist="Aswang Sash",legs="Artsieq Hose",feet="Artsieq Boots"}
 
 	-- Elemental Obi/Twilight Cape --
 	sets.Obi = {}
@@ -194,10 +145,9 @@ function get_sets()
 
 	-- JA Sets --
 	sets.JA = {}
-	sets.JA['Tabula Rasa'] = {legs="Argute Pants +2"}
-	sets.JA.Sublimation = {body="Pedagogy Gown +1",ear1="Savant's Earring"}
-    sets.JA['Light Arts'] = {legs="Academic's Pants"}
-	sets.JA['Dark Arts'] = {body="Scholar's Gown"}
+	sets.JA['Tabula Rasa'] = {legs="Pedagogy Pants"}
+    sets.JA['Light Arts'] = {legs="Acad. Pants +1"}
+	sets.JA['Dark Arts'] = {body="Academic's Gown"}
 	sets.JA['Addendum: Black'] = {body="Savant's Gown +2"}
 	sets.JA['Addendum: White'] = {body="Savant's Gown +2"}
 	sets.JA.Parsimony = {legs="Savant's Pants +2"}
@@ -207,6 +157,7 @@ function get_sets()
 	sets.JA.Perpetuance = {hands="Svnt. Bracers +2"}
 	sets.JA.Immenance = {hands="Svnt. Bracers +2"}
 	sets.JA.Enlightenment = {body="Pedagogy Gown +1"}
+	sets.JA.Stormsurge = {feet="Peda. Loafers +1"}
 
 	-- Melee Set --
 	sets.Melee = set_combine(sets.Midcast.Haste,{})
@@ -313,10 +264,12 @@ function midcast(spell,action)
 	if spell.type:endswith('Magic') or spell.type == 'Ninjutsu' then
 		equipSet = sets.Midcast
 		if string.find(spell.english,'Cur') and spell.english ~= "Cursna" then
-			if string.find(spell.english,'Cure') then
-				equipSet = equipSet.Cure
+			if string.find(spell.english,'Cure') and world.weather_element == 'Light' then
+				equipSet = equipSet.Cure.Weather	
 			elseif string.find(spell.english,'Cura') then
 				equipSet = equipSet.Curaga
+			else
+                equipSet = equipSet.Cure 			
 			end
 			if buffactive.Rapture then -- Equip Svnt. Bonnet +2 When Rapture Is Up For Curaga Spells --
 				equipSet = set_combine(equipSet,{head="Svnt. Bonnet +2"})
@@ -335,8 +288,8 @@ function midcast(spell,action)
 			equipSet = set_combine(equipSet,{head="Svnt. Bonnet +2"})
 		elseif string.find(spell.english,'Banish') then
 			equipSet = set_combine(equipSet.Haste,{ring1="Fenian Ring"})
-		elseif spell.english == "Stun" and buffactive.Alacrity then -- Equip Argute loafers +2 When Alacrity Is Up And Thunder Weather --
-			equipSet = set_combine(equipSet,{head="Nahtirah Hat",feet="Argute loafers +2"})
+		elseif spell.english == "Stun" and buffactive.Alacrity and world.weather_element == 'Thunder' then -- Equip Argute loafers +2 When Alacrity Is Up And Thunder Weather --
+			equipSet = set_combine(equipSet,{head="Nahtirah Hat",feet="Peda. Loafers +1"})
 		elseif string.find(spell.english,'Utsusemi') then
 			if spell.english == 'Utsusemi: Ichi' and (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
 				send_command('@wait 1.7;cancel Copy Image*')
