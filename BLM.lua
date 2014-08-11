@@ -1,5 +1,5 @@
 -- *** Original file from pastebin.com/u/Bokura *** --
--- Last Updated: 7/14/14 11:30 PM *Updated gear sets* ---
+-- Last Updated: 8/10/14 *Updated gear sets* ---
 
 function get_sets()
 	AccIndex = 1
@@ -29,27 +29,28 @@ function get_sets()
 	
 	-- Idle Sets --
 	sets.Idle = {}
+	sets.Idle.Refresh = set_combine(sets.Idle.Movement,{main="Bolelabunga",sub="Genbu's Shield",
+			head="Artsieq Hat",neck="Twilight Torque",ear1="Lifestorm Earring",ear2="Loquac. Earring",
+			body="Artsieq Jubbah",hands="Serpentes Cuffs",ring1="Dark Ring",ring2="Dark Ring",
+			back="Umbra Cape",waist="Fucho-no-Obi",legs="Nares Trews",feet="Serpentes Sabots"})
 	sets.Idle.Movement = {main="Kaladanda",sub="Mephitis Grip",ammo="Witchstone",
 			head="Artsieq Hat",neck="Eddy Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
 			body="Spae. Coat +1",hands="Otomi Gloves",ring1="Strendu Ring",ring2="Acumen Ring",
 			back="Toro Cape",waist="Aswang Sash",legs="Hagondes Pants",feet="Herald's Gaiters"}
-	sets.Idle.Refresh = set_combine(sets.Idle.Movement,{main="Bolelabunga",sub="Genbu's Shield",
-	        neck="Twilight Torque",ear1="Lifestorm Earring",ear2="Loquac. Earring",
-			body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Dark Ring",ring2="Dark Ring",
-			back="Umbra Cape",waist="Witful Belt",legs="Nares Trews",feet="Serpentes Sabots"})
 	sets.Resting = set_combine(sets.Idle.Refresh,{main="Boonwell Staff",sub="Mephitis Grip",ammo="Clarus Stone",
 			neck="Jeweled Collar",ring1="Angha Ring",back="Vita Cape",waist="Austerity Belt",feet="Chelona Boots +1"})
 
 	-- PDT Set --
 	sets.PDT = {main="Earth Staff",sub="Mephitis Grip",
-			head="Hagondes Hat",neck="Twilight Torque",body="Hagondes Coat",hands="Hagondes Cuffs",
-			ring1="Patricius Ring",
-			ring2={name="Dark Ring",augments={"Magic Damage Taken -4%","Physical Damage Taken -6%"}},
-			back="Umbra Cape",legs="Hagondes Pants",feet="Hagondes Sabots"}
+			head="Hagondes Hat",neck="Twilight Torque",ear1="Ethereal Earring",body="Hagondes Coat",hands="Hagondes Cuffs",
+			ring1="Patricius Ring",back="Umbra Cape",legs="Hagondes Pants",feet="Hagondes Sabots",
+			ring2={name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -4%',}}}
 
 	sets.MDT = set_combine(sets.PDT,{ammo="Sihirik",
-			head="Nahtirah Hat",ear1="Sanare Earring",ear2="Mujin Stud",body="Spae. Coat +1",
-			hands="Yaoyotl Gloves",ring1="Shadow Ring",back="Tuilha Cape",feet="Umbani Boots"})
+			head="Nahtirah Hat",neck="Twilight Torque",ear1="Sanare Earring",ear2="Mujin Stud",
+			body="Spae. Coat +1",hands="Yaoyotl Gloves",ring1="Shadow Ring",
+			ring2={name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -4%',}},
+			back="Tuilha Cape",waist="Slipor Sash",legs="Hagondes Pants",feet="Umbani Boots"})
 
 	sets.Precast = {}
 
@@ -58,19 +59,13 @@ function get_sets()
 			head="Nahtirah Hat",ear2="Loquac. Earring",body="Hedera Cotehardie",hands="Hagondes Cuffs",ring2="Prolix Ring",
 			back="Swith Cape +1",waist="Witful Belt",legs="Artsieq Hose",feet="Chelona Boots +1"}
 	
-	-- Precast Elemental Set --
-	sets.Precast['Elemental Magic'] = {
-	        head="Goetia Petasos +2",neck="Stoicheion Medal",}	
+	sets.Precast['Elemental Magic'] = {head="Goetia Petasos +2",neck="Stoicheion Medal",}	
 
-	-- Precast Enhancing Set --		
-	sets.Precast['Enhancing Magic'] = set_combine(sets.Precast.FastCast,{})
+	sets.Precast['Enhancing Magic'] = set_combine(sets.Precast.FastCast,{waist="Siegel Sash"})
 
 	-- Precast Cure Set --
-	sets.Precast.Cure = set_combine(sets.Precast.FastCast,{main="Tamaxchi",sub="Genbu's Shield",ammo="Impatiens",
-	        body="Nefer Kalasiris",ring1="Veneficium Ring",back="Pahtli Cape"})
-			
-	-- Precast Dark Set --		
-	sets.Precast['Dark Magic'] = set_combine(sets.Precast.FastCast,{ammo="Impatiens",ring1="Veneficium Ring",back="Ogapepo Cape"})		
+	sets.Precast.Cure = set_combine(sets.Precast.FastCast,{ammo="Impatiens",
+	        body="Nefer Kalasiris",ring1="Veneficium Ring",back="Pahtli Cape",waist="Ninurta's Sash"})	
 
 	-- Midcast Base Set --
 	sets.Midcast = {}
@@ -79,43 +74,52 @@ function get_sets()
 	sets.Midcast.Haste = set_combine(sets.Precast.FastCast,{})
 
 	-- Cure Set --
-	sets.Midcast.Cure = {main="Tamaxchi",sub="Genbu's Shield",
-	        neck="Colossus's Torque",ear1="Lifestorm Earring",hands="Bokwus Gloves",
-		    ring1="Ephedra Ring",ring2="Sirona's Ring",legs="Nares Trews",feet="Umbani Boots"}
+	sets.Midcast.Cure = {main="Tamaxchi",sub="Genbu's Shield",ammo="Impatiens",
+		head="Nahtirah Hat",neck="Colossus's Torque",ear1="Lifestorm Earring",ear2="Loquacious Earring",
+		body="Nefer Kalasiris",hands="Ayao's Gages",ring1="Ephedra Ring",ring2="Sirona's Ring",
+		back="Tempered Cape",waist="Cascade Belt",legs="Nares Trews",feet="Umbani Boots"}
 
 	-- Curaga Set --
 	sets.Midcast.Curaga = set_combine(sets.Midcast.Cure,{})
 
 	-- EnhancingMagic Set --
-	sets.Midcast['Enhancing Magic'] = {head="Umuthi Hat",neck="Colossus's Torque",hands="Ayao's Gages",}
-	
-    -- Warp Set --	
-	sets.Midcast.Warp = set_combine(sets.Precast.FastCast,{ammo="Impatiens",ring1="Veneficium Ring",back="Ogapepo Cape"})		
+	sets.Midcast['Enhancing Magic'] = {ammo="Impatiens",
+			head="Umuthi Hat",neck="Colossus's Torque",ear1="Loquac. Earring",hands="Ayao's Gages",
+			ring1="Prolix Ring",ring2="Veneficium Ring",back="Ogapepo Cape",waist="Witful Belt"}
+			
+	sets.Midcast.Warp = set_combine(sets.Precast.FastCast,{ammo="Impatiens",back="Ogapepo Cape",ring1="Veneficium Ring"})		
 
 	-- Stoneskin Set --
 	sets.Midcast.Stoneskin = set_combine(sets.Midcast.EnhancingMagic,{head="Umuthi Hat",neck="Stone Gorget"})
 
 	-- Cursna Set --
 	sets.Midcast.Cursna = set_combine(sets.Midcast.Haste,{
-			neck="Colossus's Torque",body="Hedera Cotehardie",hands="Bokwus Gloves",ring1="Ephedra Ring",
-			ring2="Ephedra Ring",back="Bane Cape",waist="Ninurta's Sash",feet="Hagondes Sabots"})
-
-	-- DarkMagic Sets --
-	sets.Midcast['Dark Magic'] = {main="Kaladanda",sub="Mephitis Grip",
-	        head="Artsieq Hat",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-			ring1="Angha Ring",ring2="Sangoma Ring",back="Bane Cape",feet="Goetia Sabots +2"}
-	sets.Midcast['Dark Magic'].MidACC = set_combine(sets.Midcast['Dark Magic'],{})
-	sets.Midcast['Dark Magic'].HighACC = set_combine(sets.Midcast['Dark Magic'].MidACC,{})
+			head="Nahtirah Hat",neck="Colossus's Torque",body="Hedera Cotehardie",hands="Bokwus Gloves",
+			ring1="Ephedra Ring",ring2="Ephedra Ring",back="Bane Cape",waist="Ninurta's Sash",
+			legs="Artsieq Hose",feet="Hagondes Sabots"})
 
 	-- Stun Sets --
-	sets.Midcast.Stun = set_combine(sets.Midcast['Dark Magic'],{feet="Artsieq Boots"})
+	sets.Midcast.Stun = {main="Kaladanda",sub="Mephitis Grip",ammo="Impatiens",
+			head="Artsieq Hat",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
+			body="Hedera Cotehardie",hands="Hagondes Cuffs",ring1="Prolix Ring",ring2="Sangoma Ring",
+			back="Swith Cape +1",waist="Witful Belt",legs="Artsieq Hose",feet="Artsieq Boots"}
 	sets.Midcast.Stun.MidACC = set_combine(sets.Midcast.Stun,{})
 	sets.Midcast.Stun.HighACC = set_combine(sets.Midcast.Stun.MidACC,{})
+
+	-- DarkMagic Sets --
+	sets.Midcast['Dark Magic'] = {main="Kaladanda",sub="Mephitis Grip",ammo="Impatiens",
+	        head="Artsieq Hat",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
+			body="Hedera Cotehardie",hands="Hagondes Cuffs",ring1="Prolix Ring",ring2="Sangoma Ring",
+			back="Swith Cape +1",waist="Witful Belt",legs="Artsieq Hose",feet="Goetia Sabots +2"}
+	sets.Midcast['Dark Magic'].MidACC = set_combine(sets.Midcast['Dark Magic'],{})
+	sets.Midcast['Dark Magic'].HighACC = set_combine(sets.Midcast['Dark Magic'].MidACC,{})
 	
 	-- Drain Aspir Sets --
 	
-	sets.Midcast.Drain = set_combine(sets.Midcast['Dark Magic'],{main="Bounty Sickle",
-	        ear1="Hirudinea Earring",ear2="Gwati Earring",waist="Fucho-no-obi",})
+	sets.Midcast.Drain = {main="Bounty Sickle",sub="Mephitis Grip",ammo="Impatiens",
+	        head="Artsieq Hat",neck="Eddy Necklace",ear1="Hirudinea Earring",ear2="Loquac. Earring",
+			body="Hedera Cotehardie",hands="Hagondes Cuffs",ring1="Prolix Ring",ring2="Sangoma Ring",
+			back="Swith Cape +1",waist="Fucho-no-obi",legs="Artsieq Hose",feet="Goetia Sabots +2"}
 	
 	sets.Midcast.Aspir = set_combine(sets.Midcast.Drain,{})
 
@@ -127,19 +131,21 @@ function get_sets()
 			ear2="Novio Earring", -- Crematio Earring
 			body="Spae. Coat +1",hands="Otomi Gloves",ring1="Strendu Ring",ring2="Acumen Ring",
 			back="Bane Cape",waist="Sekhmet Corset",legs="Hagondes Pants",feet="Umbani Boots"}
-	sets.Midcast['Elemental Magic'] = set_combine(sets.Midcast.LowTierNukes,{
-			head="Hagondes Hat",body="Hagondes Coat",hands="Yaoyotl Gloves",
-			back="Toro Cape",waist="Aswang Sash",feet="Hagondes Sabots"})
+	sets.Midcast['Elemental Magic'] = {main="Kaladanda",sub="Wise Strap",ammo="Witchstone",
+			head="Hagondes Hat",neck="Eddy Necklace",ear1="Friomisi Earring",ear2="Novio Earring",
+			body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Strendu Ring",ring2="Acumen Ring",
+			back="Toro Cape",waist="Aswang Sash",legs="Hagondes Pants",feet="Hagondes Sabots"}
 	sets.Midcast['Elemental Magic'].MidACC = set_combine(sets.Midcast['Elemental Magic'],{})
-	sets.Midcast['Elemental Magic'].HighACC = set_combine(sets.Midcast['Elemental Magic'].MidACC,{sub="Mephitis Grip",ammo="Kalboron Stone",
-			head="Artsieq Hat",hands="Hagondes Cuffs",ear1="Lifestorm Earring",ear2="Psystorm Earring",
+	sets.Midcast['Elemental Magic'].HighACC = set_combine(sets.Midcast['Elemental Magic'].MidACC,{
+	        sub="Mephitis Grip",ammo="Kalboron Stone",head="Artsieq Hat",
+			hands="Hagondes Cuffs",ear1="Lifestorm Earring",ear2="Psystorm Earring",
 			ring2="Sangoma Ring",back="Bane Cape",feet="Artsieq Boots"})
 	sets.Abyssea = {body='Spae. Coat +1'}	
 
 	-- Enfeebling Sets --
 	sets.Midcast['Enfeebling Magic'] = {main="Kaladanda",sub="Mephitis Grip",ammo="Kalboron Stone",
-			head="Artsieq Hat",neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
-			body="Spae. Coat +1",hands="Lurid Mitts",ring1="Angha Ring",ring2="Sangoma Ring",
+			head="Artsieq Hat",neck="Imbodla Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
+			body="Spae. Coat +1",hands="Lurid Mitts",ring1="Perception Ring",ring2="Sangoma Ring",
 			back="Bane Cape",waist="Aswang Sash",legs="Artsieq Hose",feet="Artsieq Boots"}
 	sets.Midcast['Enfeebling Magic'].MidACC =  set_combine(sets.Midcast['Enfeebling Magic'],{})
 	sets.Midcast['Enfeebling Magic'].HighACC = set_combine(sets.Midcast['Enfeebling Magic'].MidACC,{})
@@ -148,7 +154,7 @@ function get_sets()
 	sets.Midcast.Impact = {main="Kaladanda",sub="Mephitis Grip",ammo="Kalboron Stone",
 			neck="Eddy Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
 			body="Twilight Cloak",hands="Hagondes Cuffs",ring1="Angha Ring",ring2="Sangoma Ring",
-			back="Bane Cape",waist="Aswang Sash",legs="Artsieq Hose",feet="Artsieq Boots"}
+			back="Refraction Cape",waist="Demonry Sash",legs="Mes'yohi Slacks",feet="Nares Clogs"}
 
 	-- Meteor Set --
 	sets.Midcast.Meteor = set_combine(sets.Midcast['Elemental Magic'],{})
@@ -166,7 +172,7 @@ function get_sets()
 
 	-- JA Sets --
 	sets.JA = {}
-	sets.JA.Manafont = {body="Src. Coat +2"}
+	sets.JA.Manafont = {}
 	sets.JA['Enmity Douse'] = {hands="Goetia Gloves +2"}
 	sets.JA['Mana Wall'] = {feet="Goetia Sabots +2"}
 
