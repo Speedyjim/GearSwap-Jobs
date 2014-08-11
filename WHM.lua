@@ -1,5 +1,5 @@
 -- *** Original file from pastebin.com/u/Bokura *** --
--- Last Updated: 07/14/14 12:30 AM --
+-- Last Updated: 08/10/14 *Updated Gear Sets* --
 
 function get_sets()
 	IdleIndex = 1
@@ -17,40 +17,28 @@ function get_sets()
 	-- Idle Sets --
 	sets.Idle = {}
 	sets.Idle.Refresh = {main="Bolelabunga",sub="Genbu's Shield",ammo="Impatiens",
-			head="Orison Cap +2",neck="Twilight Torque",
-			ear1="Lifestorm Earring",ear2="Loquac. Earring",
-			body="Piety Briault +1",hands="Serpentes Cuffs",
-			ring1="Sangoma Ring",ring2="Bifrost Ring",back="Umbra Cape",
-			waist="Witful Belt",legs="Nares Trews",feet="Serpentes Sabots"}
+			head="Artsieq Hat",neck="Twilight Torque",ear1="Lifestorm Earring",ear2="Loquac. Earring",
+			body="Artsieq Jubbah",hands="Serpentes Cuffs",ring1="Sangoma Ring",ring2="Bifrost Ring",
+			back="Umbra Cape",waist="Witful Belt",legs="Nares Trews",feet="Serpentes Sabots"}
 	sets.Idle.Movement = set_combine(sets.Idle.Refresh,{
-			head="Orison Cap +2",neck="Colossus's Torque",
-			ear1="Lifestorm Earring",ear2="Psystorm Earring",
-			hands="Dynasty Mitts",
-			ring1="Sangoma Ring",ring2="Bifrost Ring",
+			head="Orison Cap +2",neck="Colossus's Torque",ear1="Lifestorm Earring",ear2="Psystorm Earring",
+			hands="Dynasty Mitts",ring1="Sangoma Ring",ring2="Bifrost Ring",
 			back="Pahtli Cape",legs="Theo. Pant. +1",feet="Herald's Gaiters"})
 	sets.Resting = set_combine(sets.Idle.Refresh,{main="Boonwell Staff",ammo="Clarus Stone",
-			body="Piety Briault +1",neck="Jeweled Collar",
-			ear2="Loquac. Earring",
-			ring1="Angha Ring",ring2="Sangoma Ring",
-            back="Vita Cape",waist="Austerity Belt"})
+			body="Piety Briault +1",neck="Jeweled Collar",ear2="Loquac. Earring",
+			ring1="Angha Ring",ring2="Sangoma Ring",back="Vita Cape",waist="Austerity Belt"})
 
 	-- PDT Set --
-	sets.PDT = {
-			main="Bolelabunga",sub="Genbu's Shield",
-			neck="Twilight Torque",
-			body="Gendewitha Bliaut",hands="Gendewitha Gages",
-			ring1="Patricius Ring",
-			ring2={name="Dark Ring",augments={"Magic Damage Taken -4%","Physical Damage Taken -6%"}},
-			back="Umbra Cape",
-			feet="Gende. Galoshes"}
+	sets.PDT = {main="Bolelabunga",sub="Genbu's Shield",
+			neck="Twilight Torque",ear1="Ethereal Earring",body="Gendewitha Bliaut",hands="Gendewitha Gages",
+			ring1="Patricius Ring",back="Umbra Cape",feet="Gende. Galoshes",
+			ring2={name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -4%',}}}
 			
 	sets.MDT = set_combine(sets.PDT,{ammo="Sihirik",
-	        head="Artsieq Hat",neck="Twilight Torque",
-			ear1="Mujin Stud",ear2="Sanare Earring",
-			body="Piety Briault +1",hands="Dynasty Mitts",
-			ring1={name="Dark Ring",augments={"Magic Damage Taken -3%","Physical Damage Taken -5%"}},
-			ring2={name="Dark Ring",augments={"Magic Damage Taken -4%","Physical Damage Taken -6%"}},	
-            back="Tuilha Cape",legs="Theo. Pant. +1",feet="Piety Duckbills +1"})
+	        head="Artsieq Hat",neck="Twilight Torque",ear1="Mujin Stud",ear2="Sanare Earring",
+			body="Piety Briault +1",hands="Dynasty Mitts",back="Tuilha Cape",legs="Theo. Pant. +1",feet="Piety Duckbills +1",
+			ring1="Shadow Ring",
+			ring2={name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -4%',}}})
 			
 	sets.Sublimation = {}
 
@@ -58,10 +46,8 @@ function get_sets()
 	-- Fastcast Set --
 	sets.Precast.FastCast = {ammo="Incantor Stone",
 			head="Nahtirah Hat",neck="Orison Locket",ear2="Loquac. Earring",
-			body="Hedera Cotehardie",hands="Gendewitha Gages",
-			ring1="Prolix Ring",
-			back="Swith Cape +1",waist="Witful Belt",
-			legs="Artsieq Hose",feet="Chelona Boots +1"}
+			body="Hedera Cotehardie",hands="Gendewitha Gages",ring1="Prolix Ring",
+			back="Swith Cape +1",waist="Witful Belt",legs="Artsieq Hose",feet="Chelona Boots +1"}
 
 	-- Elemental Staves --
 	sets.Precast.Light = {main='Chatoyant Staff'}
@@ -75,8 +61,7 @@ function get_sets()
 	-- Cure Precast Set --
 	sets.Precast.Cure = {main="Tamaxchi",sub="Genbu's Shield",ammo="Incantor Stone",
 			head="Piety Cap",neck="Orison Locket",ear2="Loquac. Earring",
-			body="Nefer Kalasiris",hands="Gendewitha Gages",
-			ring1="Prolix Ring",back="Pahtli Cape",
+			body="Nefer Kalasiris",hands="Gendewitha Gages",ring1="Prolix Ring",back="Pahtli Cape",
 			waist="Ninurta's Sash";legs="Artsieq Hose",feet="Litany Clogs"}
 			
 	-- Arise Precast Set --
@@ -90,77 +75,60 @@ function get_sets()
 
 	-- Cure Set --
 	sets.Midcast.Cure = {main="Tamaxchi",sub="Genbu's Shield",ammo="Incantor Stone",
-			head="Theo. Cap +1",neck="Colossus's Torque",
-			ear1="Lifestorm Earring",ear2="Orison Earring",
-			body="Orison Bliaud +2",hands="Theo. Mitts +1",
-			ring1="Sirona's Ring",ring2="Ephedra Ring",back="Tempered Cape",
-			waist="Cascade Belt",legs="Orsn. Pantaln. +2",feet="Piety Duckbills +1"}
+			head="Theo. Cap +1",neck="Colossus's Torque",ear1="Lifestorm Earring",ear2="Orison Earring",
+			body="Orison Bliaud +2",hands="Theo. Mitts +1",ring1="Sirona's Ring",ring2="Ephedra Ring",
+			back="Tempered Cape",waist="Cascade Belt",legs="Orsn. Pantaln. +2",feet="Piety Duckbills +1"}
 
 	-- Curaga Set --
 	sets.Midcast.Curaga = {main="Tamaxchi",sub="Genbu's Shield",ammo="Impatiens",
-			head="Theo. Cap +1",neck="Nuna Gorget +1",
-			ear1="Lifestorm Earring",ear2="Novia Earring",
-			body="Gendewitha Bliaut",hands="Bokwus Gloves",
-			ring1="Aquasoul Ring",ring2="Aquasoul Ring",back="Pahtli Cape",
-			waist="Cascade Belt",legs="Orsn. Pantaln. +2",feet="Piety Duckbills +1"}
+			head="Theo. Cap +1",neck="Nuna Gorget +1",ear1="Lifestorm Earring",ear2="Novia Earring",
+			body="Gendewitha Bliaut",hands="Bokwus Gloves",ring1="Aquasoul Ring",ring2="Aquasoul Ring",
+			back="Pahtli Cape",waist="Cascade Belt",legs="Orsn. Pantaln. +2",feet="Piety Duckbills +1"}
 
 	-- EnhancingMagic Set --
 	sets.Midcast['Enhancing Magic'] = set_combine(sets.Midcast.Haste,{main="Beneficus",sub="Genbu's Shield",
-			head="Umuthi Hat",neck="Colossus's Torque",hands="Dynasty Mitts",
+			head="Umuthi Hat",neck="Colossus's Torque",ear1="Andoaa Earring",hands="Dynasty Mitts",
 			waist="Cascade Belt",legs="Piety Pantaloons",feet="Orsn. Duckbills +2"})
 			
 	-- Shellra V Set --
-	sets.Midcast.Shellra = set_combine(sets.Midcast.Haste,{
-            legs="Piety Pantaloons"})
+	sets.Midcast.Shellra = set_combine(sets.Midcast.Haste,{legs="Piety Pantaloons"})
 			
 	-- Protectra V Set --
-	sets.Midcast.Protectra = set_combine(sets.Midcast.Haste,{
-            feet="Piety Duckbills +1"})			
+	sets.Midcast.Protectra = set_combine(sets.Midcast.Haste,{feet="Piety Duckbills +1"})			
 			
 	-- Arise Set --
     sets.Midcast.Arise = set_combine(sets.Midcast.Haste,{})	
 
 	-- Stoneskin Set --
-	sets.Midcast.Stoneskin = set_combine(sets.Midcast.EnhancingMagic,{
-	        neck="Stone Gorget"})
+	sets.Midcast.Stoneskin = set_combine(sets.Midcast.EnhancingMagic,{neck="Stone Gorget"})
 
 	-- Regen Set --
-	sets.Midcast.Regen = set_combine(sets.Midcast.Haste,{
-	        main="Bolelabunga",sub="Genbu's Shield",
-			body="Piety Briault +1",hands="Orison Mitts +2",
-			legs="Theo. Pant. +1",feet="Orsn. Duckbills +2"})
+	sets.Midcast.Regen = set_combine(sets.Midcast.Haste,{main="Bolelabunga",sub="Genbu's Shield",
+			body="Piety Briault +1",hands="Orison Mitts +2",legs="Theo. Pant. +1",feet="Orsn. Duckbills +2"})
 
 	-- Barspells Set --
-	sets.Midcast.Bar = set_combine(sets.Midcast.EnhancingMagic,{
-	        main="Beneficus",sub="Genbu's Shield",
-			head="Orison Cap +2",body="Orison Bliaud +2",hands="Orison Mitts +2",
-			legs="Piety Pantaloons",feet="Orsn. Duckbills +2"})
+	sets.Midcast.Bar = set_combine(sets.Midcast.EnhancingMagic,{main="Beneficus",sub="Genbu's Shield",
+			head="Orison Cap +2",body="Orison Bliaud +2",hands="Orison Mitts +2",legs="Piety Pantaloons",feet="Orsn. Duckbills +2"})
 
 	-- Na Set --
-	sets.Midcast.Na = set_combine(sets.Midcast.Haste,{
-	        head="Orison Cap +2",legs="Orsn. Pantaln. +2"})
+	sets.Midcast.Na = set_combine(sets.Midcast.Haste,{head="Orison Cap +2",legs="Orsn. Pantaln. +2"})
 
 	-- Cursna Set --
 	sets.Midcast.Cursna = set_combine(sets.Midcast.Haste,{main="Beneficus",ammo="Impatiens",
-            head="Orison Cap +2",neck="Malison Medallion",
-			ring1="Ephedra Ring",ring2="Ephedra Ring",
+            head="Orison Cap +2",neck="Malison Medallion",ring1="Ephedra Ring",ring2="Ephedra Ring",
 			back="Mending Cape",legs="Theo. Pant. +1",feet="Gende. Galoshes"})
 
 	-- DivineMagic Set --
 	sets.Midcast['Divine Magic'] = {main="Baqil Staff",sub="Mephitis Grip",ammo="Kalboron Stone",
 			head="Artsieq Hat",body="Hedera Cotehardie",hands="Clr. Mitts +2",
-			ring1="Sangoma Ring",ring2="Angha Ring",
-			back="Refraction Cape",
+			ring1="Sangoma Ring",ring2="Angha Ring",back="Refraction Cape",
 			legs="Theo. Pant. +1",feet="Artsieq Boots"}
 
 	-- EnfeeblingMagic Set --
 	sets.Midcast['Enfeebling Magic'] = {main="Baqil Staff",sub="Mephitis Grip",ammo="Kalboron Stone",
-			head="Artsieq Hat",neck="Nuna Gorget +1",
-			ear1="Lifestorm Earring",ear2="Psystorm Earring",
-			body="Hedera Cotehardie",hands="Ayao's Gages", -- Piety Mitts +1
-			ring1="Sangoma Ring",ring2="Angha Ring",
-			back="Refraction Cape",waist="Witful Belt",
-			legs="Mystagog Slacks",feet="Piety Duckbills +1"}
+			head="Artsieq Hat",neck="Imbodla Necklace",ear1="Lifestorm Earring",ear2="Psystorm Earring",
+			body="Hedera Cotehardie",hands="Lurid Mitts",ring1="Sangoma Ring",ring2="Perception Ring",
+			back="Refraction Cape",waist="Cascade Belt",legs="Mystagog Slacks",feet="Piety Duckbills +1"}
 
 	-- DarkMagic Set --
 	sets.Midcast['Dark Magic'] = set_combine(sets.Midcast['Enfeebling Magic'],{})
