@@ -1,5 +1,5 @@
 -- *** Original file from pastebin.com/u/Bokura *** --
--- Last Updated: 07/14/14 12:30 AM *Fixed Error* --
+-- Last Updated: 08/10/14 *Updated Gear Sets* --
 
 function get_sets()
 	AccIndex = 1
@@ -18,13 +18,13 @@ function get_sets()
 	-- Idle/Town Sets --
 	sets.Idle = {}
 	sets.Idle.Regen = set_combine(sets.Idle.Movement,{
-			head="Twilight Helm",neck="Wiglen Gorget",body="Arhat's Gi +1",
-			hands="Otronif Gloves",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-			back="Repulse Mantle",waist="Flume Belt",legs="Otronif Brais",feet="Danzo Sune-Ate"})
+			head="Twilight Helm",neck="Wiglen Gorget",body="Xaddi Mail",
+			hands="Otronif Gloves +1",ring1="Sheltered Ring",ring2="Paguroidea Ring",
+			back="Repulse Mantle",waist="Flume Belt",legs="Xaddi Cuisses",feet="Danzo Sune-Ate"})
 	sets.Idle.Movement = {ammo="Potestas Bomblet",
 			head="Wakido Kabuto +1",neck="Iqabi Necklace",ear1="Tripudio Earring",ear2="Brutal Earring",
-			body="Sakonji Domaru +1",hands="Wakido Kote +1",ring1="K'ayres Ring",ring2="Rajas Ring",
-			back="Takaha Mantle",waist="Dynamic Belt +1",legs="Wakido Haidate +1",feet="Danzo Sune-Ate"}
+			body="Kyujutsugi",hands="Wakido Kote +1",ring1="K'ayres Ring",ring2="Rajas Ring",
+			back="Takaha Mantle",waist="Dynamic Belt +1",legs="Scuff. Cosciales",feet="Danzo Sune-Ate"}
 
 	sets.Twilight = {head="Twilight Helm",body="Twilight Mail"}
 
@@ -38,50 +38,56 @@ function get_sets()
 			ring1="K'ayres Ring",ring2="Rajas Ring",back="Takaha Mantle",waist="Windbuffet Belt",
 			legs="Wakido Haidate +1",feet="Sak. Sune-Ate +1"}
 	sets.TP.Tsurumaru.MidACC = set_combine(sets.TP.Tsurumaru,{
-			head="Yaoyotl Helm",ear1="Steelflash Earring",ear2="Bladeborn Earring",waist="Dynamic Belt +1"})
+			head="Yaoyotl Helm",ear1="Trux Earring",ear2="Brutal Earring",waist="Dynamic Belt +1"})
 	sets.TP.Tsurumaru.HighACC = set_combine(sets.TP.Tsurumaru.MidACC,{
-			neck="Iqabi Necklace",ring1="Patricius Ring",ring2="Mars's Ring",feet="Wakido Sune-Ate"})
+			neck="Iqabi Necklace",ring1="Patricius Ring",ring2="Mars's Ring",legs="Xaddi Cuisses",feet="Wakido Sune-Ate"})
 
 	-- Tsurumaru(Ionis) TP Sets --
 	sets.TP.Tsurumaru.Ionis =  set_combine(sets.TP.Tsurumaru,{})
 	sets.TP.Tsurumaru.MidACC.Ionis = set_combine(sets.TP.Tsurumaru.MidAcc,{})
 	sets.TP.Tsurumaru.HighACC.Ionis = set_combine(sets.TP.Tsurumaru.HighACC,{})
+	
+	-- Anahera Blade TP Sets --
+	sets.TP.AnaheraBlade =  set_combine(sets.TP.Tsurumaru,{main="Anahera Blade"})
+	sets.TP.AnaheraBlade.MidACC = set_combine(sets.TP.Tsurumaru.MidAcc,{})
+	sets.TP.AnaheraBlade.HighACC = set_combine(sets.TP.Tsurumaru.HighACC,{})
 			
-	-- Ranged Accuracy TP Sets --
+	--[[ Ranged Accuracy TP Sets --
     sets.Ranged = {
 	        head="Tema. Headband",neck="Iqabi Necklace",ear1="Vision Earring",ear2="Clearview Earring",
 			body="Kyujutsugi",hands="Unkai Kote +2",ring1="Hajduk Ring",ring2="Hajduk Ring",
 			back="Kayapa Cape",waist="Sao. Koshi-Ate",legs="Temachtiani Pants",feet="Temachtiani Boots"}	
 	sets.Ranged.MidACC = set_combine(sets.Ranged,{})	
 	sets.Ranged.HighACC = set_combine(sets.Ranged.MidACC,{})	
-
+    ]]--
+	
 	-- Seigan TP Set --
 	sets.TP.Seigan = {head="Unkai Kabuto +2"}
 
 	-- Third Eye TP Set --
-	sets.TP['Third Eye'] = {legs="Sakonji Haidate"}
+	sets.TP['Third Eye'] = {legs=""}
 
 	-- PDT/MDT Sets --
 	sets.PDT = {
 			head="Otronif Mask",neck="Wiglen Gorget",body="Arhat's Gi +1",hands="Sakonji Kote",
 			ring1="Patricius Ring",
-			ring2={name="Dark Ring",augments={"Magic Damage Taken -4%","Physical Damage Taken -6%"}},
-			back="Repulse Mantle",waist="Flume Belt",legs="Otronif Brais",feet="Otronif Boots"}
+			ring2={name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -4%',}},
+			back="Repulse Mantle",waist="Flume Belt",legs="Xaddi Cuisses",feet="Otronif Boots +1"}
 
 	sets.MDT = set_combine(sets.PDT,{ammo="Demonry Stone",
 			head="Wakido Kabuto +1",ear1="Mujin Stud",ear2="Sanare Earring",
-			body="Kyujutsugi",hands="Buremte Gloves",ring1="Shadow Ring",
-			ring2={name="Dark Ring",augments={"Magic Damage Taken -4%","Physical Damage Taken -6%"}},
+			body="Kyujutsugi",hands="Otronif Gloves +1",ring1="Shadow Ring",
+			ring2={name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -4%',}},
 			back="Mubvum. Mantle",legs="Wakido Haidate +1",feet="Daihanshi Habaki"})
 
 	-- Hybrid Sets --
 	sets.TP.Hybrid = set_combine(sets.PDT,{
 			ear1="Steelflash Earring",ear2="Bladeborn Earring",
-			hands="Sakonji Kote +1",ring1="Patricius Ring",back="Repulse Mantle"})
+			hands="Sakonji Kote",ring1="Patricius Ring",back="Repulse Mantle"})
 	sets.TP.Hybrid.MidACC = set_combine(sets.TP.Hybrid,{
-			head="Yaoyotl Helm",body="Mes. Haubergeon",waist="Dynamic Belt +1",})
+			head="Yaoyotl Helm",waist="Dynamic Belt +1",})
 	sets.TP.Hybrid.HighACC = set_combine(sets.TP.Hybrid.MidACC,{
-			neck="Iqabi Necklace",back="Takaha Mantle",feet="Waki. Sune-Ate +1"})
+			neck="Iqabi Necklace",back="Takaha Mantle",feet="Wakido Sune-Ate"})
 
 	-- WS Base Set --
 	sets.WS = {ammo="Cheruski Needle",
@@ -102,7 +108,7 @@ function get_sets()
 	sets.WS["Tachi: Shoha"].MidACC = set_combine(sets.WS["Tachi: Shoha"],{
 			head="Yaoyotl Helm",neck="Breeze Gorget",hands="Miki. Gauntlets",waist="Shadow Belt",})
 	sets.WS["Tachi: Shoha"].HighACC = set_combine(sets.WS["Tachi: Shoha"].MidACC,{
-			body="Mes. Haubergeon",back="Takaha Mantle",
+			back="Takaha Mantle",
 			legs="Miki. Cuisses", -- Replace with Xaddi Cuisses
 			feet="Wakido Sune-Ate"})
 
@@ -125,6 +131,7 @@ function get_sets()
 	-- JA Sets --
 	sets.JA = {}
 	sets.JA.Meditate = {head="Wakido Kabuto +1",hands="Sakonji Kote"}
+	sets.JA.Hasso = {hands="Wakido Kote +2"}
 	sets.JA["Warding Circle"] = {head="Wakido Kabuto +1"}
 	sets.JA["Meikyo Shisui"] = {feet="Sak. Sune-Ate +1"}
 	sets.JA["Blade Bash"] = {hands="Sakonji Kote"}
