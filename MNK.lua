@@ -1,12 +1,11 @@
 -- Original LUA by Bokura, pastebin.com/u/Bokura --
--- Last Updated: 07/14/14 12:30 AM *Advanced Version* --
-
+-- Last Updated: 08/10/14 *Updated Gear Sets* --
 
 function get_sets()
 	AccIndex = 1
 	AccArray = {"LowACC","MidACC","HighACC","MADx1","MADx2"} -- 3 Levels Of Accuracy Sets For TP/WS/Hybrid. First Set Is LowACC. Add More ACC Sets If Needed Then Create Your New ACC Below. --
 	WeaponIndex = 1
-	WeaponArray = {"Tinhaspa"} -- Default Main Weapon Is Verethragna. Can Delete Any Weapons That You Don't Own. --
+	WeaponArray = {"Tinhaspa","Oatixur"} -- Default Main Weapon Is Verethragna. Can Delete Any Weapons That You Don't Own. --
 	IdleIndex = 1
 	IdleArray = {"Movement","Regen"} -- Default Idle Set Is Movement --
 	Armor = 'None'
@@ -24,17 +23,11 @@ function get_sets()
 			head="Oce. Headpiece +1",neck="Wiglen Gorget",ear1="Moonshade Earring",ear2="Brutal Earring",
 			body="Hes. Cyclas",hands="Otronif Gloves +1",ring1="Sheltered Ring",ring2="Paguroidea Ring",
 			back="Repulse Mantle",waist="Black Belt",legs="Otronif Brais",feet="Herald's Gaiters"}
-	sets.Idle.Regen.Verethragna = set_combine(sets.Idle.Regen,{})
-	sets.Idle.Regen.Glanzfaust = set_combine(sets.Idle.Regen,{})
-	sets.Idle.Regen.Spharai = set_combine(sets.Idle.Regen,{})
 
 	sets.Idle.Movement = set_combine(sets.Idle.Regen,{
 			head="Felistris Mask",neck="Iqabi Necklace",
 			body="Anch. Cyclas +1",hands="Anch. Gloves +1",ring1="Epona's Ring",ring2="Rajas Ring",
 			back="Anchoret's Mantle",waist="Windbuffet Belt",legs="Hes. Hose +1"})
-	sets.Idle.Movement.Verethragna = set_combine(sets.Idle.Movement,{})
-	sets.Idle.Movement.Glanzfaust = set_combine(sets.Idle.Movement,{})
-	sets.Idle.Movement.Spharai = set_combine(sets.Idle.Movement,{})
 
 	-- TP Sets --
 	sets.TP = {ammo="Potestas Bomblet",
@@ -42,8 +35,7 @@ function get_sets()
 			body="Thaumas Coat",hands="Otronif Gloves +1",ring1="Epona's Ring",ring2="Rajas Ring",
 			back="Atheling Mantle",waist="Windbuffet Belt",legs="Hes. Hose +1",feet="Anch. Gaiters +1"}
 	sets.TP.MidACC = set_combine(sets.TP,{
-			ammo="Honed Tathlum",
-			hands="Hes. Gloves +1",})
+			ammo="Honed Tathlum",body="Qaaxo Harness",hands="Hes. Gloves +1",})
 	sets.TP.HighACC = set_combine(sets.TP.MidACC,{
 	        head="Whirlpool Mask",neck="Iqabi Necklace",
 			body="Anch. Cyclas +1",back="Anchoret's Mantle",
@@ -88,11 +80,11 @@ function get_sets()
 			head="Otronif Mask",neck="Twilight Torque",ear1="Steelflash Earring",ear2="Bladeborn Earring",
 			body="Anch. Cyclas +1",hands="Otronif Gloves +1",ring1="Patricius Ring",
 			ring2={ name="Dark Ring", augments={'Phys. dmg. taken -6%','Magic dmg. taken -4%',}},
-			back="Repulse Mantle",waist="Black Belt",legs="Otronif Brais",feet="Otronif Boots"}
+			back="Repulse Mantle",waist="Black Belt",legs="Otronif Brais",feet="Otronif Boots +1"}
 
 	sets.MDT = set_combine(sets.PDT,{ammo="Demonry Stone",
 			head="Felistris Mask",neck="Twilight Torque",ear1="Mujin Stud",ear2="Sanare Earring",
-	        body="Anch. Cyclas +1",hands="Hes. Gloves +1",ring2="Shadow Ring",back="Mubvum. Mantle",
+	        body="Anch. Cyclas +1",hands="Hes. Gloves +1",ring1="Shadow Ring",back="Mubvum. Mantle",
 			legs="Nahtirah Trousers",feet="Daihanshi Habaki"})
 
 	-- Hybrid/HP Sets --
